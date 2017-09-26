@@ -1,0 +1,23 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: microservice-hystrix-turbine
+  kafka:
+    bootstrap-servers: localhost:9092
+    client-id: asd
+    consumer:
+      enable-auto-commit: true
+      group-id: asdasd
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://user:password123@peer1:8761/eureka/,http://user:password123@peer2:8762/eureka/
+  instance:
+    prefer-ip-address: true
+turbine:
+  app-config: microservice-consumer-movie,microservice-simple-consumer-movie-feign
+  cluster-name-expression: "'default'"
+
